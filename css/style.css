@@ -1,0 +1,141 @@
+body{
+	margin: 0;
+	background-image: url(img/background.jpeg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+}
+/* Entete de page */
+#entete{
+	/*Police*/
+	font-size: 3.2em;
+	font-family: "Impact";
+	/*Bordure*/
+	border: 2px black solid;
+	border-radius: 15px ;
+	box-shadow: 6px 6px 2px green;
+	/*Position*/
+	display: flex;
+	justify-content: center;
+	margin-right: 25px;
+	margin-left: 25px;
+
+}
+/* Bandeau de Promotion*/
+#promo{
+	background-color: rgb(136, 204, 0);
+	font-size: 1.1em;
+	font-family: "Impact";
+	margin-right: 250px;
+	margin-left: 250px;
+	margin-top: 0px;
+	border-left: 2px blue solid;
+	border-right: 2px blue solid;
+
+}
+/*Menu de Navigation*/
+nav {
+	background-color: rgb(136, 204, 0);
+	border-bottom: 2px black solid;
+}
+/*Liste*/
+nav ul {
+	font-family: "Arial Black";
+	list-style-type: none;
+	margin-bottom: 50px;
+}
+/*Puces*/
+nav ul li {
+	display: inline-block;
+	font-size: 1.1em; 	
+	margin-left: 40px;
+	margin-right: 40px;
+}
+/*Liens Menu*/
+nav ul li a {
+	color: rgb(20, 37, 232);
+	text-decoration: none;
+	border-top: 3px rgb(64, 128, 0) solid;
+	border-bottom: 3px rgb(64, 128, 0) solid;
+	padding-top: 3px;
+	padding-bottom: 3px;	
+	
+}
+/*Lien Menu Survole*/
+nav ul li a:hover {
+	color: white;
+	border-top: 4px black solid;
+	border-bottom: 4px black solid;
+}
+/* Image de présentation */
+#bierepain{
+	border-left:3px black solid;
+	border-bottom:3px black solid;
+	border-right:3px black solid;
+	border-radius: 6px;
+	float: right;
+	height: 50%;
+	width: 50%;
+	margin-right:20px;
+}
+
+#icone{
+	float: left;
+	max-width: 130px;
+	max-height: auto;
+	margin-left: -20px;
+	margin-top: -43px;
+}
+
+h1{
+	margin-left: 5px;
+	font-family: "Arial Black";
+	font-size: 2.1em;
+	text-decoration: underline;
+}
+
+p{
+	font-family: "Arial Black";
+	font-size: 0.9em;
+	margin-left: 3px;
+}
+
+#containerphp{
+	background-color: rgba(0,0,0,0.6);
+	display: flex;
+	justify-content: space-around;
+	flex-flow: column wrap;
+	align-items: center;
+	font-family: 'comic-sans', sans-serif;
+	font-size: 0.9em;
+	
+	color: white;
+
+}
+#divprix{
+	background-color: red;
+		font-size: 1.2em;
+}
+#divtitre{
+	font-size: 1.3em;
+}
+#imgphp{
+	height: 160px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+footer a{
+	display: flex;
+	justify-content: center;
+	text-decoration: none;
+	list-style: none;
+	color: black;
+	font-size: 1.3em;
+	border: 2px black dashed;
+}
+footer a:hover{
+	color: black;
+	font-size: 1.3em;
+	border: 2px black ;
+}
