@@ -3,8 +3,10 @@
 	//inner.HTML = PrixQuantite();
 //}
 function calculPrix(id){
-	var prixHT = document.getElementById("HT_"+id).innerHTML;
+	var prixHT = parseFloat(document.getElementById("HT_"+id).innerHTML);
+	var prixTTC = parseInt(document.getElementById("TTC_"+id).innerHTML);
 	console.log(prixHT);
+	console.log(prixTTC);
 }
 
 //var quantite = document.getElementById("quantite_<?= $i ?>");
