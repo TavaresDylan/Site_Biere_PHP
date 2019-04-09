@@ -15,46 +15,50 @@ include("beerArray.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 </head>
-<body class="conatainer-fluid bg-dark text-white">
-
+<body class="container-fluid bg-dark text-white">
+<!-- Formulaire Coordonnées Client -->
 	<form method="Get" class="container mt-3 border border-danger p-3">
 
-		<label class="m-3 ">Prénom :</label>
-		<input class="rounded" type="text" name="prenom" required="true">
+		<label class="col-3">Prénom :</label>
+			<input class="rounded" type="text" name="prenom" required="true">
 
-		<label class="">Nom :</label>
-		<input class="rounded" type="text" name="nom" required="true">
+		<label class="col-3">Nom :</label>
+			<input class="rounded" type="text" name="nom" required="true">
 
-		<label class="">Adresse: :</label>
-		<input class="rounded" type="text" name="adresse" required="true">
+		<label class="col-3">Adresse: :</label>
+			<input class="rounded" type="text" name="adresse" required="true">
 
-		<label class="">N° de rue :</label>
-		<input class="rounded" type="text" name="num">
+		<label class="col-3">N° de rue :</label>
+			<input class="rounded" type="text" name="num">
 
-		<label class="">Code postal :</label>
-		<input class="rounded" type="text" name="cp">
+		<label class="col-3">Code postal :</label>
+			<input class="rounded" type="text" name="cp">
 
-		<label class="">Ville :</label>
-		<input class="rounded" type="text" name="ville">
+		<label class="col-3">Ville :</label>
+			<input class="rounded" type="text" name="ville">
 
-		<label class="">N° Tel :</label>
-		<input class="rounded" type="tel" name="tel">
+		<label class="col-3">Pays :</label>
+			<input class="rounded" type="text" name="pays" required="true">
 
-		<label class="">Mail :</label>
-		<input class="rounded" type="email" name="mail" required="true">
+		<label class="col-3">N° Tel :</label>
+			<input class="rounded" type="tel" name="tel">
 
+		<label class="col-3">Mail :</label>
+			<input class="rounded" type="email" name="mail" required="true">
+<!-- Bouton d'envoi du formulaire coordonnées client  -->
 		<input class="btn btn-outline-danger btn-lg btn-block mt-3" type="submit"></input>
 
 	</form>
-
+<!-- Formulaire Achat Client -->
 	<form class="border border-danger container">
-
+<!-- Afficher phrase avec infos get -->
 		<?php
 
-		echo 'Bonjour '.ucfirst($_GET['nom']).' '.ucfirst($_GET['prenom']).' vous habitez le '.$_GET['num'].' '.ucfirst($_GET['adresse']).' '.$_GET['cp'].' à '.ucfirst($_GET['ville']).'<br /> Faites votre choix :<br />';
+		echo 'Bonjour '.ucfirst($_GET['nom']).' '.ucfirst($_GET['prenom']).' vous habitez le '.$_GET['num'].' '.ucfirst($_GET['adresse']).' '.$_GET['cp'].' à '.ucfirst($_GET['ville']).' , '.ucfirst($_GET['pays']).'.<br /> Faites votre choix :<br />';
 			?>
-
+	<!-- Tableau -->
 		<table class="border border-primary m-3">
+		<!-- Tête du tableau -->
 			<thead>
 				<tr>
 					<th>Produit :</th>
@@ -62,35 +66,44 @@ include("beerArray.php");
 					<th>Prix TTC :</th>
 					<th>Quantité :</th>
 				</tr>
-			</thead>
-						
+			</thead>					
 <?php
+//Boucle du tableau php//
 	for ($i=0; $i < count($beerArray) ; $i++):
 ?>
+<!-- Corps du tableau -->
 	<tr class="border border-primary">
 			<td class="pr-4">
 				<?php echo $beerArray[$i][0]?>
 			</td>
-			<td class="pr-4">
-				<?php echo $beerArray[$i][3].' €'?>
+			<td id =<?php echo "HT_".$i."" ?>"" class="pr-4">
+				<?php echo number_format($beerArray[$i][3],2,',','.')?> €
 			</td>
-			<td class="pr-4">
-				<?php echo number_format(number) $beerArray[$i][3].' €'?>
+			<td id=<?php echo "TTC_".$i."" ?>"" class="pr-4">
+				<?php echo number_format($beerArray[$i][3]*$TTC,2,',','.')?> €
 			</td>
+<!-- Input quantités -->
 			<td class="pr-4">
-				<input class="rounded text-center" type="number" name="qt">
+				<input id="quantite_<?= $i ?>" class="rounded text-center" type="number" name=<?php echo "quantite_".$i."" ?>"" value='0'>
 			</td>
-
 			
 	</tr>
 
+
 <?php endfor ?>
+<!-- Fin du tableau -->
 </table>
-<input class="btn btn-outline-primary btn-lg mb-2" type="submit"></input>
-	
+<!-- Bouton d'envoi du formulaire achat client -->
+<input class="btn btn-outline-primary btn-lg mb-2" id="validOrder" type="submit"></input>
+<!-- Fin du formulaire -->
+</form>
+
 <?php 
 //var_dump($beerArray)
 ?>
-</form>	
+
+<!-- Lien Javascript -->
+<script type="text/javascript" src="js/script.js"></script>
+
 </body>
 </html>
