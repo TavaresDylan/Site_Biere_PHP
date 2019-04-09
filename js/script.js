@@ -1,11 +1,13 @@
-var qT = getElementById('<?php echo "quantite_".$beerArray[$i][0]."" ?>');
-	//for (var i = $beerArray.length - 1; i >= 0; i--) {
-		//var recup = document.getElementById('<?php echo "HT_".$i."" ?>');
-	//}
-	
-	
-	function afficherPrixHtQt() {
-		recup *= document.getElementById("quantite_<?= $i ?>")
-	};
 
-	console.log(recup);
+//for ($i=0; $i < length($beerArray) ; $i++):{
+	//inner.HTML = PrixQuantite();
+//}
+function calculPrix(id){
+	var prixHT = document.getElementById("HT_"+id).innerHTML;
+	console.log(prixHT);
+}
+
+//var quantite = document.getElementById("quantite_<?= $i ?>");
+//function PrixQuantite(id) {
+	//inner.HTML = prixHT * quantite
+//};

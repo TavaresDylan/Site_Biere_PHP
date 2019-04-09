@@ -76,15 +76,15 @@ include("beerArray.php");
 			<td class="pr-4">
 				<?php echo $beerArray[$i][0]?>
 			</td>
-			<td id =<?php echo "HT_".$i."" ?>"" class="pr-4">
+			<td class='pr-4' id =<?php echo "HT_".$i?>>
 				<?php echo number_format($beerArray[$i][3],2,',','.')?> €
 			</td>
-			<td id=<?php echo "TTC_".$i."" ?>"" class="pr-4">
+			<td id=<?php echo "TTC_".$i?>"" class="pr-4">
 				<?php echo number_format($beerArray[$i][3]*$TTC,2,',','.')?> €
 			</td>
 <!-- Input quantités -->
 			<td class="pr-4">
-				<input id="quantite_<?= $i ?>" class="rounded text-center" type="number" name=<?php echo "quantite_".$i."" ?>"" value='0'>
+				<input id="quantite_<?= $i ?>" class="rounded text-center" type="number" name=<?php echo "quantite_".$i."" ?>"" value='0' onclick=<?php echo "calculPrix(".$i.")" ?> >
 			</td>
 			
 	</tr>
