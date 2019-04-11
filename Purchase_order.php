@@ -84,7 +84,7 @@ include("beerArray.php");
 			</td>
 <!-- Input quantités -->
 			<td class="pr-4">
-				<input onclick=<?php echo "calculPrix(".$i.")" ?> value='0' id="quantite_<?= $i ?>" class="rounded text-center" type="number" name=<?php echo "quantite_".$i."" ?>>
+				<input onclick=<?php echo "calculPrix(".$i.")" ?> value='0' min="0" id="quantite_<?= $i ?>" class="rounded text-center" type="number" name=<?php echo "quantite_".$i."" ?>>
 			</td>
 			
 	</tr>

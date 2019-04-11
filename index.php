@@ -1,4 +1,4 @@
-
+<?php
 	//Fonction qui nous permet d'afficher les infos dans le tableau
 function showBeerArray($infos){
 	//Ecrire dans le HTML
